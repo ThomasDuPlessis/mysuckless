@@ -156,8 +156,14 @@ static unsigned int defaultattr = 11;
  */
 static MouseShortcut mshortcuts[] = {
 	/* button               mask            string */
-	{ Button4,              XK_ANY_MOD,     "\031" },
-	{ Button5,              XK_ANY_MOD,     "\005" },
+	{ Button4,              XK_NO_MOD,      "\031" },
+	{ Button5,              XK_NO_MOD,      "\005" },
+};
+
+MouseKey mkeys[] = {
+	/* button               mask            function        argument */
+	{ Button4,              ShiftMask,      kscrollup,      {.i =  1} },
+	{ Button5,              ShiftMask,      kscrolldown,    {.i =  1} },
 };
 
 /* Internal keyboard shortcuts. */
@@ -172,13 +178,13 @@ static Shortcut shortcuts[] = {
 	{ XK_ANY_MOD,           XK_Print,       printsel,       {.i =  0} },
 	{ TERMMOD,              XK_Prior,       zoom,           {.f = +1} },
 	{ TERMMOD,              XK_Next,        zoom,           {.f = -1} },
-	{ TERMMOD,              XK_plus,        zoom,           {.f = +1} },
-	{ TERMMOD,              XK_minus,       zoom,           {.f = -1} },
-        { TERMMOD,              XK_Up,          kscrollup,      {.i = -1} },
-        { TERMMOD,              XK_Down,        kscrolldown,    {.i = -1} },
 	{ TERMMOD,              XK_Home,        zoomreset,      {.f =  0} },
 	{ TERMMOD,              XK_C,           clipcopy,       {.i =  0} },
 	{ TERMMOD,              XK_V,           clippaste,      {.i =  0} },
+        { ShiftMask,            XK_Page_Up,     kscrollup,      {.i = -1} },
+        { ShiftMask,            XK_Page_Down,   kscrolldown,    {.i = -1} },
+        { TERMMOD,              XK_Up,          kscrollup,      {.i = -1} },
+        { TERMMOD,              XK_Down,        kscrolldown,    {.i = -1} },
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
 };
