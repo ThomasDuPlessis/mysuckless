@@ -7,3 +7,6 @@
 [submodule "dvtm"]
 	path = dvtm
 	url = https://github.com/martanne/dvtm.git
+[submodule "9menu"]
+	path = 9menu
+	url = https://github.com/arnoldrobbins/9menu.git
