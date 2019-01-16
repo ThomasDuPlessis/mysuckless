@@ -125,6 +125,8 @@ char *xstrdup(char *);
 void kscrolldown(const Arg *);
 void kscrollup(const Arg *);
 
+int subprocwd(char *);
+
 /* config.h globals */
 extern char *utmp;
 extern char *stty_args;
